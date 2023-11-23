@@ -298,7 +298,7 @@ function Podtable(tableEl, config = {}) {
         }
 
         let mainToggle = document.querySelector('.main-toggle')
-        mainToggle.addEventListener('click', toggleAll)
+        mainToggle?.addEventListener('click', toggleAll)
     }
 
     /**
@@ -312,7 +312,7 @@ function Podtable(tableEl, config = {}) {
         }
 
         let mainToggle = document.querySelector('.main-toggle')
-        mainToggle.removeEventListener('click', toggleAll)
+        mainToggle?.removeEventListener('click', toggleAll)
     }
 
     /**
@@ -546,14 +546,14 @@ function Podtable(tableEl, config = {}) {
         const callback = (mutations) => {
             for (const mutation of mutations) {
                 if (mutation.type == 'childList' && mutation.addedNodes.length == 1) {
-                    if (mutation.addedNodes[0].tagName.toUpperCase() == 'TBODY') {
+                    if (mutation.addedNodes[0] && mutation.addedNodes[0].tagName?.toUpperCase() == 'TBODY') {
                         for (let node of mutation.addedNodes[0].children) {
                             resetRow(node)
                             shouldPing()
                         }
                     }
 
-                    if (mutation.addedNodes[0].tagName.toUpperCase() == 'TR' && !mutation.addedNodes[0].classList.contains('child')) {
+                    if (mutation.addedNodes[0] && mutation.addedNodes[0].tagName?.toUpperCase() == 'TR' && !mutation.addedNodes[0].classList.contains('child')) {
                         resetRow(mutation.addedNodes[0])
                         shouldPing()
                     }
