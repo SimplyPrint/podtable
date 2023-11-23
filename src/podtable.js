@@ -149,14 +149,14 @@ function Podtable(tableEl, config = {}) {
      */
     function setToggleCell(table) {
         for (let row of table.rows) {
-            if (row.parentElement.tagName.toUpperCase() == 'TBODY') {
+            if (row.parentElement?.tagName?.toUpperCase() == 'TBODY') {
                 if (!row.hasAttribute('data-ptr-ignore')) {
-                    row.lastElementChild.classList.add('toggle')
+                    row.lastElementChild?.classList.add('toggle')
                 }
             }
             
-            if (row.parentElement.tagName.toUpperCase() == 'THEAD') {
-                row.lastElementChild.classList.add('main-toggle')
+            if (row.parentElement?.tagName?.toUpperCase() == 'THEAD') {
+                row.lastElementChild?.classList.add('main-toggle')
             }
         }
     }
@@ -558,7 +558,7 @@ function Podtable(tableEl, config = {}) {
                         shouldPing()
                     }
                 } else if (mutation.type == 'childList' && mutation.removedNodes.length == 1) {
-                    if (mutation.removedNodes[0].tagName.toUpperCase() == 'TR' &&
+                    if (mutation.removedNodes[0].tagName?.toUpperCase() == 'TR' &&
                         !mutation.removedNodes[0].classList.contains('child') &&
                         mutation.removedNodes[0].classList.contains('has-child')) {
                         mutation.nextSibling.remove()
