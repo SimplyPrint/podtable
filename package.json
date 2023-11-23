@@ -1,6 +1,6 @@
 {
   "name": "@simplyprint/podtable",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "description": "Podtable is a lightweight library to make HTML table fit into smaller device screens",
   "author": "Afuwape Sunday",
   "license": "MIT",
