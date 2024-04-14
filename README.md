@@ -1,3 +1,5 @@
+## No longer in use: replaced by our own table library, based on "Svelte Headless Table", with built-in Svelte-powered responsiveness
+
 <p align="center"><img src="/art/code.png" alt="podtable code"></p>
 
 <p align="center">
